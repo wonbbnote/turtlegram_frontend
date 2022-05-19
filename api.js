@@ -104,3 +104,11 @@ async function getArticles(){
     response_json = await response.json()
     return response_json.articles
 }
+
+function logout(){
+    localStorage.removeItem("token")
+    // 로컬 스토리지에 있는 토큰값 삭제
+    window.location.replace(`${frontend_base_url}/`);
+    // 새로고침
+
+}
