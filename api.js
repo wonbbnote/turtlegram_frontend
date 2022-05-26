@@ -138,6 +138,27 @@ async function getArticleDetail(article_id){
     return response_json.article
 }
 
+async function patchArticle(article_id, title, content){
+    const articleData = {
+        "title": title,
+        "content": content
+    }
+    const response = await fetch(`${backend_base_url}/article/${article_id}`,{
+        headers :{
+            'Authorization': localStorage.getItem("token")},
+        method: 'PATCH',
+        body: JSON.stringify(articleData)
+    })
+
+    if (response.status==200){
+        response_json = await response.json()
+        return response_json
+    }else{
+        alert(response.status)
+    }
+    
+}
+
 
 
 
