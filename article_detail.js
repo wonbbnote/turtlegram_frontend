@@ -20,5 +20,31 @@ async function loadArticle(article_id){
 
 }
 
+function updateMode(){
+    const title = document.getElementById("title")
+    const content = document.getElementById("content")
+    title.style.visibility = "hidden"
+    content.style.visibility = "hidden"
+
+    const input_title = document.createElement("textarea")
+    input_title.setAttribute("id", "input_title")
+    input_title.innerText = title.innerHTML
+
+    const input_content = document.createElement("textarea")
+    input_content.setAttribute("id", "input_content")
+    input_content.innerText = content.innerHTML
+    input_content.rows = 10
+
+    const body = document.body
+    body.insertBefore(input_title, title)
+    body.insertBefore(input_content, content)
+
+
+
+
+
+
+}
+
 loadArticle(article_id);
 
