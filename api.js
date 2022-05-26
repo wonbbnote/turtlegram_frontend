@@ -123,5 +123,10 @@ function logout(){
 
 function articleDetail(article_id){
     console.log(article_id)
+    //이동하고 싶은 url 만들기
+    const url = `${frontend_base_url}/article_detail.html?id=${article_id}`
+    location.href = url
     
+
+
 }
