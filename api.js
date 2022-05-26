@@ -61,11 +61,18 @@ async function getName(){
             'Authorization': localStorage.getItem("token")
         }
         })
-        response_json = await response.json()
-        console.log(response_json)
+        
+        
+        if (response.status ==200){ //로그인이 안되어있으면 401리턴되도록 데코레이터 함수에서 설정
+            response_json = await response.json()
+            console.log(response_json)
+            return response_json.email
+        }else{
+            return null
+        }
 
-        const username = document.getElementById("username")
-        username.innerText = response_json.email
+        // const username = document.getElementById("username")
+        // username.innerText = response_json.email
 
 }
 
@@ -81,7 +88,7 @@ async function postArticle(title, content){
 
     const response = await fetch(`${backend_base_url}/article`,{
         method:'POST',
-        headers:{
+        headers:{ 
             'Authorization':localStorage.getItem("token")},
         body: JSON.stringify(articleData)
     })
