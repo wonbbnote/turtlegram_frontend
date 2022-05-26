@@ -18,6 +18,15 @@ async function loadArticle(article_id){
     user_email.innerText = article.user_email
     time.innerText = article.time
 
+    const user = await getName()
+    if (user.id != article.user){
+        const update_button = document.getElementById("update_button")
+        const delete_button = document.getElementById("delete_button")
+        update_button.style.visibility = "hidden"
+        delete_button.style.visibility = "hidden"
+    }
+
+
 }
 
 function updateMode(){

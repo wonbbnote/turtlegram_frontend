@@ -24,7 +24,7 @@ async function checkLogin(){
     const loginoutButton = document.getElementById("loginout")
 
     if(name){ // name이 있다면
-        username.innerText = name
+        username.innerText = name.email
         loginoutButton.innerText = "로그아웃"
         loginoutButton.setAttribute("onclick", "logout()")
     }else{ // name이 없다면 (null)

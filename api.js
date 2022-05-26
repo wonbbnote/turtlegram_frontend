@@ -66,7 +66,7 @@ async function getName(){
         if (response.status ==200){ //로그인이 안되어있으면 401리턴되도록 데코레이터 함수에서 설정
             response_json = await response.json()
             console.log(response_json)
-            return response_json.email
+            return response_json
         }else{
             return null
         }
