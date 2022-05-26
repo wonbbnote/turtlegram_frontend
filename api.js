@@ -119,3 +119,9 @@ function logout(){
     // 새로고침
 
 }
+
+
+function articleDetail(article_id){
+    console.log(article_id)
+    
+}
