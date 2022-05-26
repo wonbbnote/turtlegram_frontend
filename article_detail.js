@@ -62,9 +62,21 @@ async function updateArticle(){
     update_button.setAttribute("onclick", "updateMode()")
     
     loadArticle(article_id)
-    
 
 }
+
+async function removeArticle(){
+    await deleteArticle(article_id)
+    
+}
+
+
+
+
+
+
+
+
 
 loadArticle(article_id);
 
