@@ -134,6 +134,8 @@ async function getArticleDetail(article_id){
     })
     response_json = await response.json()
     console.log(response_json)
+
+    return response_json.article
 }
 
 
