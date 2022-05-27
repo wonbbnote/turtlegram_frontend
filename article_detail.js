@@ -19,6 +19,7 @@ async function loadArticle(article_id){
     time.innerText = article.time
 
     const comment_section = document.getElementById("comment_section")
+    comment_section.innerHTML = ''
     for (let i = 0; i<article.comments.length;i++){
         const new_comment = document.createElement("p")
         new_comment.innerText = article.comments[i].content
@@ -87,7 +88,12 @@ async function removeArticle(){
     
 }
 
+async function writeComment(){
+    const comment_content = document.getElementById("comment_content")
+    const comment = await postComment(article_id, comment_content.value)
+    loadArticle(article_id)
 
+}
 
 
 
