@@ -18,6 +18,14 @@ async function loadArticle(article_id){
     user_email.innerText = article.user_email
     time.innerText = article.time
 
+    const comment_section = document.getElementById("comment_section")
+    for (let i = 0; i<article.comments.length;i++){
+        const new_comment = document.createElement("p")
+        new_comment.innerText = article.comments[i].content
+        comment_section.appendChild(new_comment)
+
+    }
+
     const user = await getName()
     if (user.id != article.user){
         const update_button = document.getElementById("update_button")
